@@ -21,7 +21,7 @@
 
 
 //1b AND GATE
-module AND_1b(input in1, in2, output out);
+module AND_1b(input in0, in1, output out);
 
-    assign out = in1 & in2;
+    assign out = in0 & in1;
 endmodule

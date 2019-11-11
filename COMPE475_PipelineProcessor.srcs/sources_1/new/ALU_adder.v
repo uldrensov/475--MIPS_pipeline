@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/09/2019 09:55:39 PM
+// Create Date: 11/10/2019 09:58:57 PM
 // Design Name: 
-// Module Name: PC
+// Module Name: ALU_adder
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,11 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//PROGRAM COUNTER
-module PC #(parameter addrW=16)
-(input CLK, STALL, input[addrW-1:0] PCnext, output reg[addrW-1:0] PCcurr);
+//ADDER
+module ALU_adder #(parameter WL=32)
+(input [WL-1:0] in0, in1, output [WL-1:0] out);
 
-    initial PCcurr = 0;
-    always @(posedge CLK)
-        if (!STALL) PCcurr <= PCnext;
+    assign out = in0 + in1;
 endmodule

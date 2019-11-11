@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/09/2019 10:05:20 PM
+// Create Date: 11/10/2019 04:15:26 PM
 // Design Name: 
-// Module Name: PIP_REG_ID
+// Module Name: EQ
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,12 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//PIPELINE REGISTER: DECODE STAGE
-module PIP_REG_ID #(parameter addrW=16)
-(input CLK, input[addrW-1:0] PC_plus1, input[31:0] instrIF,
-    output reg[31:0] instrID);
-    
-    always @(posedge CLK) begin
-        
-    end
+//EQUALITY COMPARATOR
+module EQ #(parameter WL=32)
+(input[WL-1:0] in0, in1, output equal);
+
+    assign equal = (in0 == in1)? 1:0;
 endmodule

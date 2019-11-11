@@ -31,14 +31,13 @@ module ALU #(parameter WL=32)
             3'b110: ALUOut = ALUIn1 - ALUIn2; //subtraction
             3'b000: ALUOut = ALUIn1 & ALUIn2; //and
             3'b001: ALUOut = ALUIn1 | ALUIn2; //or
-            3'b111: ALUOut = ALUIn1 < ALUIn2 ? 32'b1 : 32'b0; //SLT comparison
+            3'b111: ALUOut = (ALUIn1 < ALUIn2)? 1:0; //SLT comparison
             3'b011: ALUOut = ALUIn2 << shamt; //shift left logical
             3'b100: ALUOut = ALUIn2 << ALUIn1; //shift left logical variable
             3'b101: ALUOut = ALUIn2 >>> ALUIn1; //shift right arith variable
         endcase
         
         //set zero flag if applicable
-        if (ALUOut == 0) ZERO = 1;
-        else ZERO = 0;
+        ZERO = (ALUOut == 0)? 1:0;
     end
 endmodule

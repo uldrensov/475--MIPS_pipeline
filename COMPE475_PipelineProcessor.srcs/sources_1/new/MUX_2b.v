@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/09/2019 10:58:56 PM
+// Create Date: 11/10/2019 07:15:16 PM
 // Design Name: 
-// Module Name: tb
+// Module Name: MUX_2b
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module tb;
+//2b-SELECT MUX
+module MUX_2b #(parameter WL=32)
+(input[WL-1:0] in0, in1, in2, input[1:0] sel,
+    output reg[WL-1:0] out);
     
-    reg CLK = 0;
-    
-    always #2 CLK = ~CLK;
-    
-    initial begin
-        
+    always @(*) begin
+        case (sel)
+            0: out <= in0;
+            1: out <= in1;
+            2: out <= in2;
+        endcase
     end
 endmodule

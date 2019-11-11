@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//16b TO 32b SIGN EXTENDER
-module SE(input[15:0] imm, output reg signed[31:0] simm);
+//SIGN EXTENDER
+module SE #(parameter WLin=16, WLout=32)
+(input[WLin-1:0] imm, output signed[WLout-1:0] simm);
 
-    always @(*) simm <= imm[15]? {16'b1111111111111111, imm}:
-        simm <= {16'b0, imm};
+    assign simm = imm[WLin-1]? {16'hFFFF, imm}:{16'b0, imm};
 endmodule

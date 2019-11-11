@@ -22,7 +22,7 @@
 
 //1b-SELECT MUX
 module MUX_1b #(parameter WL=32)
-(input[WL-1:0] in0, in1, input sel, output reg[WL-1:0] out);
+(input[WL-1:0] in0, in1, input sel, output[WL-1:0] out);
 
-    always @(*) out <= sel? in1:in0;
+    assign out = sel? in1:in0;
 endmodule
