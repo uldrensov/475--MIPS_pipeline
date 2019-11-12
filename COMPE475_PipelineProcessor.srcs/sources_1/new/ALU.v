@@ -23,7 +23,7 @@
 //MAIN ALU
 module ALU #(parameter WL=32)
 (input[2:0] ALUsel, input[4:0] shamt, input signed[WL-1:0] ALUIn1, ALUIn2,
-    output reg ZERO, output reg signed[WL-1:0] ALUOut);
+    output reg signed[WL-1:0] ALUOut);
 
     always @(*) begin
         case (ALUsel)
@@ -36,8 +36,5 @@ module ALU #(parameter WL=32)
             3'b100: ALUOut = ALUIn2 << ALUIn1; //shift left logical variable
             3'b101: ALUOut = ALUIn2 >>> ALUIn1; //shift right arith variable
         endcase
-        
-        //set zero flag if applicable
-        ZERO = (ALUOut == 0)? 1:0;
     end
 endmodule

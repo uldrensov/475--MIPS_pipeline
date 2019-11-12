@@ -22,18 +22,17 @@
 
 //PIPELINE REGISTER: DECODE TO EXECUTE
 module PIP_REG_IDtoEX #(parameter WL=32)
-(input CLK, RFWE_ID, DMWE_ID, BRANCH_ID, MtoRFsel_ID, RFDsel_ID, ALUInsel_ID,
-    input[2:0] ALUsel_ID, input[4:0] rs_ID, rt_ID, rd_ID,
-    input signed[WL-1:0] RFRD1_ID, RFRD2_ID, simm_ID,
-    output reg RFWE_EX, DMWE_EX, BRANCH_EX, MtoRFsel_EX, RFDsel_EX, ALUInsel_EX,
-    output reg[2:0] ALUsel_EX, output reg[4:0] rs_EX, rt_EX, rd_EX,
-    output reg signed[WL-1:0] RFRD1_EX, RFRD2_EX, simm_EX);
+(input CLK, RFWE_ID, DMWE_ID, MtoRFsel_ID, RFDsel_ID, ALUInsel_ID,
+    input[2:0] ALUsel_ID, input[4:0] rs_ID, rt_ID, rd_ID, shamt_ID,
+    input signed[WL-1:0] OPRND1_ID, OPRND2_ID, simm_ID,
+    output reg RFWE_EX, DMWE_EX, MtoRFsel_EX, RFDsel_EX, ALUInsel_EX,
+    output reg[2:0] ALUsel_EX, output reg[4:0] rs_EX, rt_EX, rd_EX, shamt_EX,
+    output reg signed[WL-1:0] OPRND1_EX, OPRND2_EX, simm_EX);
 
     always @(posedge CLK) begin
         ALUsel_EX <= ALUsel_ID;
         RFWE_EX <= RFWE_ID;
         DMWE_EX <= DMWE_ID;
-        BRANCH_EX <= BRANCH_ID;
         MtoRFsel_EX <= MtoRFsel_ID;
         RFDsel_EX <= RFDsel_ID;
         ALUInsel_EX <= ALUInsel_ID;
@@ -41,9 +40,10 @@ module PIP_REG_IDtoEX #(parameter WL=32)
         rs_EX <= rs_ID;
         rt_EX <= rt_ID;
         rd_EX <= rd_ID;
+        shamt_EX <= shamt_ID;
         
-        RFRD1_EX <= RFRD1_ID;
-        RFRD2_EX <= RFRD2_ID;
+        OPRND1_EX <= OPRND1_ID;
+        OPRND2_EX <= OPRND2_ID;
         simm_EX <= simm_ID;
     end
 endmodule

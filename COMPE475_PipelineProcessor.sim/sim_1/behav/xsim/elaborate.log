@@ -1,0 +1,11 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:64]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 32 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:95]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:102]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

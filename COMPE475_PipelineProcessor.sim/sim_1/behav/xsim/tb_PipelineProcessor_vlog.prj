@@ -1,0 +1,28 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" \
+"../../../../COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

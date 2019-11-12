@@ -21,7 +21,7 @@
 
 
 //ALU CONTROL UNIT
-module CTRL_ALUop(input[1:0] ALUOp, input[5:0] funct,
+module CTRL_ALU(input[1:0] ALUOp, input[5:0] funct,
     output reg[2:0] ALUsel);
     
     always @(*) begin
