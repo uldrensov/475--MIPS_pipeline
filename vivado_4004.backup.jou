@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov 11 20:27:21 2019
-# Process ID: 9544
+# Start of session at: Mon Nov 11 15:52:47 2019
+# Process ID: 4004
 # Current directory: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6472 C:\Users\Cliff\Desktop\Important docs\Schoolwork\SDSU\Computer Engineering\COMPE 475\COMPE475_PipelineProcessor\COMPE475_PipelineProcessor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7596 C:\Users\Cliff\Desktop\Important docs\Schoolwork\SDSU\Computer Engineering\COMPE 475\COMPE475_PipelineProcessor\COMPE475_PipelineProcessor.xpr
 # Log file: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/vivado.log
 # Journal file: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor\vivado.jou
 #-----------------------------------------------------------
@@ -13,14 +13,21 @@ start_gui
 open_project {C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.xpr}
 update_compile_order -fileset sources_1
 launch_simulation
-source tb_PipelineProcessor.tcl
-close_sim
 launch_simulation
 source tb_PipelineProcessor.tcl
 close_sim
 launch_simulation
 source tb_PipelineProcessor.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
 close_sim
 launch_simulation
 source tb_PipelineProcessor.tcl
+relaunch_sim
+close_sim
+launch_simulation
+source tb_PipelineProcessor.tcl
+relaunch_sim
 close_sim

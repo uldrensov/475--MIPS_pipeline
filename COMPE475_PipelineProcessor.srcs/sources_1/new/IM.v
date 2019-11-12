@@ -21,7 +21,7 @@
 
 
 //INSTRUCTION MEMORY
-module IM #(parameter addrW=16)
+module IM #(parameter addrW=17)
 (input[addrW-1:0] IMRA, output[31:0] IMRD);
 
     reg[31:0] ROM[2**addrW-1:0];

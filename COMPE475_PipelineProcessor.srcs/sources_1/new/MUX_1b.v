@@ -20,9 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//1b-SELECT MUX
+//1b-SELECT MUX (SIGNED)
 module MUX_1b #(parameter WL=32)
-(input[WL-1:0] in0, in1, input sel, output[WL-1:0] out);
+(input signed[WL-1:0] in0, in1, input sel, output reg signed[WL-1:0] out);
 
-    assign out = sel? in1:in0;
+    always @(*) begin
+        case (sel)
+            0: out <= in0;
+            1: out <= in1;
+            default: out <= in0;
+        endcase
+    end
 endmodule

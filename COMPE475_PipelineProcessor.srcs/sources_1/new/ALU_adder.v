@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//ADDER
-module ALU_adder #(parameter WL=32)
-(input [WL-1:0] in0, in1, output [WL-1:0] out);
+//SIGNED ADDER
+module ALU_adder #(parameter addrW=17)
+(input signed[addrW-1:0] in0, in1, output signed[addrW-1:0] out);
 
     assign out = in0 + in1;
 endmodule

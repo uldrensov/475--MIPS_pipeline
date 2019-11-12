@@ -20,16 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//2b-SELECT MUX
+//2b-SELECT MUX (SIGNED)
 module MUX_2b #(parameter WL=32)
-(input[WL-1:0] in0, in1, in2, input[1:0] sel,
-    output reg[WL-1:0] out);
+(input signed[WL-1:0] in0, in1, in2, input[1:0] sel,
+    output reg signed[WL-1:0] out);
     
     always @(*) begin
         case (sel)
             0: out <= in0;
             1: out <= in1;
             2: out <= in2;
+            default: out <= in0;
         endcase
     end
 endmodule

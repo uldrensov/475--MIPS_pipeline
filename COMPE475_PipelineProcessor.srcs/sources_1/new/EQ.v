@@ -22,7 +22,8 @@
 
 //EQUALITY COMPARATOR
 module EQ #(parameter WL=32)
-(input[WL-1:0] in0, in1, output equal);
+(input[WL-1:0] in0, in1, output reg equal);
 
-    assign equal = (in0 == in1)? 1:0;
+    initial equal = 0;
+    always@(*) equal <= (in0 == in1)? 1:0;
 endmodule

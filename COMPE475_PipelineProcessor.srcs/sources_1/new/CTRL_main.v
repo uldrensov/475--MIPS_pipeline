@@ -25,6 +25,8 @@ module CTRL_main(input[5:0] opcode,
     output reg RFWE, DMWE, BRANCH, JUMP, MtoRFsel, RFDsel, ALUInsel,
     output reg[1:0] ALUOp);
     
+    initial BRANCH = 0;
+    
     always @(*) begin
         //defaults
         RFWE = 0; DMWE = 0;

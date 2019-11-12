@@ -21,7 +21,7 @@
 
 
 //DATA MEMORY
-module DM #(parameter addrW=16, WL=32)
+module DM #(parameter addrW=17, WL=32)
 (input CLK, DMWE, input[addrW-1:0] DMA, input signed[WL-1:0] DMWD,
     output reg signed[WL-1:0] DMRD);
 

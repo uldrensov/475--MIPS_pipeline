@@ -22,7 +22,8 @@
 
 //16b TO (WL)b SIGN EXTENDER
 module SE #(parameter WLout=32)
-(input[15:0] imm, output signed[WLout-1:0] simm);
+(input[15:0] imm, output reg signed[WLout-1:0] simm);
 
-    assign simm = imm[15]? {16'hFFFF, imm}:{16'b0, imm};
+    reg[WLout-17:0] ext = 0;
+    always @(*) simm <= imm[15]? {~ext, imm}:{ext, imm};
 endmodule

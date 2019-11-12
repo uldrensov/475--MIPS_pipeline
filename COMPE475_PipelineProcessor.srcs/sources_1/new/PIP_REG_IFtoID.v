@@ -21,7 +21,7 @@
 
 
 //PIPELINE REGISTER: FETCH TO DECODE
-module PIP_REG_IFtoID #(parameter addrW=16)
+module PIP_REG_IFtoID #(parameter addrW=17)
 (input CLK, STALL, RST,
     input[addrW-1:0] PCplus1_IF, input[31:0] instr_IF,
     output reg[addrW-1:0] PCplus1_ID, output reg[31:0] instr_ID);

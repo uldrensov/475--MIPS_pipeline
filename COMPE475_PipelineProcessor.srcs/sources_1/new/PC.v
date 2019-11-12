@@ -21,7 +21,7 @@
 
 
 //PROGRAM COUNTER
-module PC #(parameter addrW=16)
+module PC #(parameter addrW=17)
 (input CLK, STALL, input[addrW-1:0] PCnext, output reg[addrW-1:0] PCcurr);
 
     initial PCcurr = 0;

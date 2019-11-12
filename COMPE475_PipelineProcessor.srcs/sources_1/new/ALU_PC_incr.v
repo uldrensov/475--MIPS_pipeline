@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//PC INCREMENT ALU
-module ALU_PC_incr #(parameter addrW=16)
+//PC INCREMENTER
+module ALU_PC_incr #(parameter addrW=17)
 (input[addrW-1:0] curr, output[addrW-1:0] next);
 
     assign next = curr+1;

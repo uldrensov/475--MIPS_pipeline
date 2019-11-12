@@ -21,8 +21,7 @@
 
 
 //1b AND GATE
-module AND_1b(input in0, in1, output reg out);
+module AND_1b(input in0, in1, output out);
 
-    initial out = 0;
-    always@(*) out = in0 & in1;
+    assign out = in0 & in1;
 endmodule
