@@ -57,13 +57,17 @@ module tb_PipelineProcessor;
     wire[4:0] RFWA_WB;
     wire signed[WL-1:0] ALUOut_WB, DMRD_WB, RFWD;
     
+    wire STALL, FLUSH_IDtoEX;
+    wire FW1_ID, FW2_ID;
+    wire[1:0] FW1_EX, FW2_EX;
+    
     
     //IF stage
-    PC PC(.CLK(CLK), .STALL(1'b0), .PCnext(PCnext), .PCcurr(PCcurr));
+    PC PC(.CLK(CLK), .STALL(STALL), .PCnext(PCnext), .PCcurr(PCcurr));
         ALU_PC_incr ALU_PC_incr(.curr(PCcurr), .next(PCplus1_IF));
         MUX_1b #(addrW)MUXintoPCnext(.in0(PCplus1_IF), .in1(BTA), .sel(BEQ), .out(PCnext));
     IM IM(.IMRA(PCcurr), .IMRD(instr_IF));
-    PIP_REG_IFtoID PIP_REG_IFtoID(.CLK(CLK), .STALL(1'b0), .RST(BEQ), .PCplus1_IF(PCplus1_IF), .instr_IF(instr_IF),
+    PIP_REG_IFtoID PIP_REG_IFtoID(.CLK(CLK), .STALL(STALL), .RST(BEQ), .PCplus1_IF(PCplus1_IF), .instr_IF(instr_IF),
             .PCplus1_ID(PCplus1_ID), .instr_ID(instr_ID));
     
     //ID stage
@@ -74,11 +78,11 @@ module tb_PipelineProcessor;
     CTRL_ALU CTRL_ALU(.ALUOp(ALUOp), .funct(instr_ID[5:0]), .ALUsel(ALUsel_ID));
     RF RF(.CLK(CLK), .RFWE(RFWE_WB), .RFRA1(instr_ID[25:21]), .RFRA2(instr_ID[20:16]), .RFWA(RFWA_WB), .RFWD(RFWD),
             .RFRD1(RFRD1), .RFRD2(RFRD2));
-        MUX_1b FWMUXintoOPRND1(.in0(RFRD1), .in1(), .sel(), .out(OPRND1_ID));
-        MUX_1b FWMUXintoOPRND2(.in0(RFRD2), .in1(), .sel(), .out(OPRND2_ID));
+        MUX_1b FWMUXintoOPRND1(.in0(RFRD1), .in1(ALUOut_MEM), .sel(FW1_ID), .out(OPRND1_ID));
+        MUX_1b FWMUXintoOPRND2(.in0(RFRD2), .in1(ALUOut_MEM), .sel(FW2_ID), .out(OPRND2_ID));
     SE SE(.imm(instr_ID[15:0]), .simm(simm_ID));
     ALU_adder BTAadder(.in0(simm_ID), .in1(PCplus1_ID), .out(BTA));
-    PIP_REG_IDtoEX PIP_REG_IDtoEX(.CLK(CLK), .RFWE_ID(RFWE_ID), .DMWE_ID(DMWE_ID),
+    PIP_REG_IDtoEX PIP_REG_IDtoEX(.CLK(CLK), .RST(FLUSH_IDtoEX), .RFWE_ID(RFWE_ID), .DMWE_ID(DMWE_ID),
             .MtoRFsel_ID(MtoRFsel_ID), .RFDsel_ID(RFDsel_ID), .ALUInsel_ID(ALUInsel_ID), .ALUsel_ID(ALUsel_ID),
             .rs_ID(instr_ID[25:21]), .rt_ID(instr_ID[20:16]), .rd_ID(instr_ID[15:11]), .shamt_ID(instr_ID[10:6]),
             .OPRND1_ID(OPRND1_ID), .OPRND2_ID(OPRND2_ID), .simm_ID(simm_ID),
@@ -89,8 +93,8 @@ module tb_PipelineProcessor;
     
     //EX stage
     ALU ALU(.ALUsel(ALUsel_EX), .shamt(shamt), .ALUIn1(ALUIn1), .ALUIn2(ALUIn2), .ALUOut(ALUOut_EX));
-        MUX_2b FWMUXintoALUIn1(.in0(OPRND1_EX), .in1(), .in2(), .sel(), .out(ALUIn1));
-        MUX_2b FWMUXintoALUIn2andDMWD(.in0(OPRND2_EX), .in1(), .in2(), .sel(), .out(ALUIn2andDMWD));
+        MUX_2b FWMUXintoALUIn1(.in0(OPRND1_EX), .in1(ALUOut_MEM), .in2(RFWD), .sel(FW1_EX), .out(ALUIn1));
+        MUX_2b FWMUXintoALUIn2andDMWD(.in0(OPRND2_EX), .in1(ALUOut_MEM), .in2(RFWD), .sel(FW2_EX), .out(ALUIn2andDMWD));
         MUX_1b MUXintoALUIn2(.in0(ALUIn2andDMWD), .in1(simm_EX), .sel(ALUInsel_EX), .out(ALUIn2));
     MUX_1b MUXintoRFWA(.in0(rt_EX), .in1(rd_EX), .sel(RFDsel_EX), .out(RFWA_EX));
     PIP_REG_EXtoMEM PIP_REG_EXtoMEM(.CLK(CLK), .RFWE_EX(RFWE_EX), .DMWE_EX(DMWE_EX), .MtoRFsel_EX(MtoRFsel_EX),
@@ -99,7 +103,7 @@ module tb_PipelineProcessor;
             .RFWA_MEM(RFWA_MEM), .ALUOut_MEM(ALUOut_MEM), .DMWD_MEM(DMWD_MEM));
     
     //MEM stage
-    DM #(8)DM(.CLK(CLK), .DMWE(DMWE_MEM), .DMA(ALUOut_MEM), .DMWD(DMWD_MEM), .DMRD(DMRD_MEM));
+    DM #(32,8)DM(.CLK(CLK), .DMWE(DMWE_MEM), .DMA(ALUOut_MEM), .DMWD(DMWD_MEM), .DMRD(DMRD_MEM));
     PIP_REG_MEMtoWB PIP_REG_MEMtoWB(.CLK(CLK), .RFWE_MEM(RFWE_MEM), .MtoRFsel_MEM(MtoRFsel_MEM),
             .RFWA_MEM(RFWA_MEM), .ALUOut_MEM(ALUOut_MEM), .DMRD_MEM(DMRD_MEM),
             .RFWE_WB(RFWE_WB), .MtoRFsel_WB(MtoRFsel_WB),
@@ -109,7 +113,11 @@ module tb_PipelineProcessor;
     MUX_1b MUXintoRFWD(.in0(ALUOut_WB), .in1(DMRD_WB), .sel(MtoRFsel_WB), .out(RFWD));
     
     //hazard unit
-    HAZ HAZ();
+    HAZ HAZ(.RFWE_MEM(RFWE_MEM), .RFWE_WB(RFWE_WB), .BRANCH(BRANCH), .JUMP_ID(1'b0), .LW_EX(MtoRFsel_EX),
+            .rs_ID(instr_ID[25:21]), .rt_ID(instr_ID[20:16]), .rs_EX(rs_EX), .rt_EX(rt_EX),
+            .RFWA_EX(RFWA_EX), .RFWA_MEM(RFWA_MEM), .RFWA_WB(RFWA_WB),
+            .STALL(STALL), .FLUSH_IDtoEX(FLUSH_IDtoEX), .FW1_ID(FW1_ID), .FW2_ID(FW2_ID),
+            .FW1_EX(FW1_EX), .FW2_EX(FW2_EX));
     
     
     always #5 CLK = ~CLK;
@@ -117,6 +125,8 @@ module tb_PipelineProcessor;
 endmodule
 
 //TODO:
-//write-first RF
+//parametric everything
 //sequential will not infer latch
 //smth wrong with ctrl alu filename
+//fix rtypes in singlecycle
+//fw from wb to id

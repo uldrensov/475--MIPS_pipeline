@@ -21,21 +21,24 @@
 
 
 //REGISTER FILE
-module RF #(parameter addrW=5, WL=32)
-(input CLK, RFWE, input[addrW-1:0] RFRA1, RFRA2, RFWA, input signed[WL-1:0] RFWD,
-    output reg signed[WL-1:0] RFRD1, RFRD2);
+module RF #(parameter wid=32, dep=5)
+(input CLK, RFWE, input[dep-1:0] RFRA1, RFRA2, RFWA, input signed[wid-1:0] RFWD,
+    output reg signed[wid-1:0] RFRD1, RFRD2);
 
-    reg[WL-1:0] RAM[2**addrW-1:0];
+    reg[wid-1:0] RAM[2**dep-1:0];
     
-    //init register 0
+    //init $0
     initial RAM[0] = 0;
     
-    always @(posedge CLK)
-        //sync enabled write
-        if (RFWE) RAM[RFWA] <= RFWD;
+    always @(posedge CLK) begin
+        //sync write-first
+        if (RFWE) RAM[RFWA] = RFWD;
+        RFRD1 = RAM[RFRA1];
+        RFRD2 = RAM[RFRA2];
+    end
     
+    //async read
     always @(*) begin
-        //unconditional async read
         RFRD1 <= RAM[RFRA1];
         RFRD2 <= RAM[RFRA2];
     end

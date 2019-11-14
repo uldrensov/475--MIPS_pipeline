@@ -21,8 +21,8 @@
 
 
 //MAIN ALU
-module ALU #(parameter WL=32)
-(input[2:0] ALUsel, input[4:0] shamt, input signed[WL-1:0] ALUIn1, ALUIn2,
+module ALU #(parameter WL=32, shwid=5)
+(input[2:0] ALUsel, input[shwid-1:0] shamt, input signed[WL-1:0] ALUIn1, ALUIn2,
     output reg signed[WL-1:0] ALUOut);
 
     always @(*) begin

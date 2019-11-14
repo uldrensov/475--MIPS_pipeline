@@ -21,11 +21,11 @@
 
 
 //DATA MEMORY
-module DM #(parameter addrW=17, WL=32)
-(input CLK, DMWE, input[addrW-1:0] DMA, input signed[WL-1:0] DMWD,
-    output reg signed[WL-1:0] DMRD);
+module DM #(parameter wid=32, dep=17)
+(input CLK, DMWE, input[dep-1:0] DMA, input signed[wid-1:0] DMWD,
+    output reg signed[wid-1:0] DMRD);
 
-    reg[WL-1:0] RAM[2**addrW-1:0];
+    reg[wid-1:0] RAM[2**dep-1:0];
     
     initial begin
         RAM[0] = 17;
