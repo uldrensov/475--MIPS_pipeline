@@ -30,16 +30,10 @@ module RF #(parameter wid=32, dep=5)
     //init $0
     initial RAM[0] = 0;
     
-    always @(posedge CLK) begin
-        //sync write-first
+    always @(negedge CLK) begin
+        //sync; write-first
         if (RFWE) RAM[RFWA] = RFWD;
         RFRD1 = RAM[RFRA1];
         RFRD2 = RAM[RFRA2];
-    end
-    
-    //async read
-    always @(*) begin
-        RFRD1 <= RAM[RFRA1];
-        RFRD2 <= RAM[RFRA2];
     end
 endmodule

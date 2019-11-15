@@ -2,8 +2,8 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Nov 14 20:53:40 2019
-# Process ID: 11984
+# Start of session at: Wed Nov 13 17:13:53 2019
+# Process ID: 6200
 # Current directory: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim/xsim.dir/tb_PipelineProcessor_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim/webtalk.log
@@ -11,4 +11,4 @@
 #-----------------------------------------------------------
 source C:/Users/Cliff/Desktop/Important -notrace
 couldn't read file "C:/Users/Cliff/Desktop/Important": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Thu Nov 14 20:53:40 2019...
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov 13 17:13:53 2019...
