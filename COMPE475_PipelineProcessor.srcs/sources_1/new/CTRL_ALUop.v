@@ -21,8 +21,9 @@
 
 
 //ALU CONTROL UNIT
-module CTRL_ALU(input[1:0] ALUOp, input[5:0] funct,
-    output reg[2:0] ALUsel);
+module CTRL_ALU #(parameter op_wid=2, mode_wid=3, f_wid=6)
+(input[op_wid-1:0] ALUOp, input[f_wid-1:0] funct,
+    output reg[mode_wid-1:0] ALUsel);
     
     always @(*) begin
         if (ALUOp == 2'b00) ALUsel <= 3'b010; //unconditional add 

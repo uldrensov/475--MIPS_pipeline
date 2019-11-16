@@ -21,11 +21,11 @@
 
 
 //PIPELINE REGISTER: MEMORY TO WRITEBACK
-module PIP_REG_MEMtoWB #(parameter WL=32)
-(input CLK, RFWE_MEM, MtoRFsel_MEM, input[4:0] RFWA_MEM,
-    input signed[WL-1:0] ALUOut_MEM, DMRD_MEM,
-    output reg RFWE_WB, MtoRFsel_WB, output reg[4:0] RFWA_WB,
-    output reg signed[WL-1:0] ALUOut_WB, DMRD_WB);
+module PIP_REG_MEMtoWB #(parameter wid=32, RFdep=5)
+(input CLK, RFWE_MEM, MtoRFsel_MEM, input[RFdep-1:0] RFWA_MEM,
+    input signed[wid-1:0] ALUOut_MEM, DMRD_MEM,
+    output reg RFWE_WB, MtoRFsel_WB, output reg[RFdep-1:0] RFWA_WB,
+    output reg signed[wid-1:0] ALUOut_WB, DMRD_WB);
 
     always @(posedge CLK) begin
         RFWE_WB <= RFWE_MEM;

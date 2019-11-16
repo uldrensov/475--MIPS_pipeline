@@ -21,10 +21,10 @@
 
 
 //PIPELINE REGISTER: FETCH TO DECODE
-module PIP_REG_IFtoID #(parameter addrW=17)
+module PIP_REG_IFtoID #(parameter wid=32, dep=17)
 (input CLK, STALL, RST,
-    input[addrW-1:0] PCplus1_IF, input[31:0] instr_IF,
-    output reg[addrW-1:0] PCplus1_ID, output reg[31:0] instr_ID);
+    input[dep-1:0] PCplus1_IF, input[wid-1:0] instr_IF,
+    output reg[dep-1:0] PCplus1_ID, output reg[wid-1:0] instr_ID);
     
     always @(posedge CLK) begin
         if (RST) instr_ID <= 0; //flush next instr if branching

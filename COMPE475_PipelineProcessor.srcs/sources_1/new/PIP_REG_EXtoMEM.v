@@ -21,11 +21,11 @@
 
 
 //PIPELINE REGISTER: EXECUTE TO MEMORY
-module PIP_REG_EXtoMEM #(parameter WL=32)
+module PIP_REG_EXtoMEM #(parameter wid=32, RFdep=5)
 (input CLK, RFWE_EX, DMWE_EX, MtoRFsel_EX,
-    input[4:0] RFWA_EX, input signed[WL-1:0] ALUOut_EX, DMWD_EX,
+    input[RFdep-1:0] RFWA_EX, input signed[wid-1:0] ALUOut_EX, DMWD_EX,
     output reg RFWE_MEM, DMWE_MEM, MtoRFsel_MEM,
-    output reg[4:0] RFWA_MEM, output reg signed[WL-1:0] ALUOut_MEM, DMWD_MEM);
+    output reg[RFdep-1:0] RFWA_MEM, output reg signed[wid-1:0] ALUOut_MEM, DMWD_MEM);
 
     always @(posedge CLK) begin
         RFWE_MEM <= RFWE_EX;

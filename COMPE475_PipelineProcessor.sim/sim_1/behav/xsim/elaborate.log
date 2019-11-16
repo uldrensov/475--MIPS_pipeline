@@ -3,17 +3,17 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:85]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:100]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:107]
-WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PC
-Compiling module xil_defaultlib.ALU_PC_incr
+Compiling module xil_defaultlib.ALU_incr
 Compiling module xil_defaultlib.MUX_1b(WL=17)
 Compiling module xil_defaultlib.IM
 Compiling module xil_defaultlib.PIP_REG_IFtoID

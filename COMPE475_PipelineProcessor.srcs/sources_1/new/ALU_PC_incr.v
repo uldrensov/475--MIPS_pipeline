@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//PC INCREMENTER
-module ALU_PC_incr #(parameter addrW=17)
-(input[addrW-1:0] curr, output[addrW-1:0] next);
+//INCREMENTER
+module ALU_incr #(parameter WL=17)
+(input[WL-1:0] in, output[WL-1:0] out);
 
-    assign next = curr+1;
+    assign out = in+1;
 endmodule

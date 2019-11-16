@@ -21,9 +21,9 @@
 
 
 //MAIN ALU
-module ALU #(parameter WL=32, shwid=5)
-(input[2:0] ALUsel, input[shwid-1:0] shamt, input signed[WL-1:0] ALUIn1, ALUIn2,
-    output reg signed[WL-1:0] ALUOut);
+module ALU #(parameter wid=32, mode_wid=3, sh_wid=5)
+(input[mode_wid-1:0] ALUsel, input[sh_wid-1:0] shamt, input signed[wid-1:0] ALUIn1, ALUIn2,
+    output reg signed[wid-1:0] ALUOut);
 
     always @(*) begin
         case (ALUsel)

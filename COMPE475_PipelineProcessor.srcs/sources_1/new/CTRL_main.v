@@ -21,9 +21,10 @@
 
 
 //MAIN CONTROL UNIT
-module CTRL_main(input[5:0] opcode,
+module CTRL_main #(parameter code_wid=6, op_wid=2)
+(input[code_wid-1:0] opcode,
     output reg RFWE, DMWE, BRANCH, JUMP, MtoRFsel, RFDsel, ALUInsel,
-    output reg[1:0] ALUOp);
+    output reg[op_wid-1:0] ALUOp);
     
     initial BRANCH = 0;
     

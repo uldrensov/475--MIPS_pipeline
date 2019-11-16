@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Nov 14 20:17:33 2019
-# Process ID: 10448
+# Start of session at: Fri Nov 15 21:36:31 2019
+# Process ID: 11368
 # Current directory: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6296 C:\Users\Cliff\Desktop\Important docs\Schoolwork\SDSU\Computer Engineering\COMPE 475\COMPE475_PipelineProcessor\COMPE475_PipelineProcessor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11488 C:\Users\Cliff\Desktop\Important docs\Schoolwork\SDSU\Computer Engineering\COMPE 475\COMPE475_PipelineProcessor\COMPE475_PipelineProcessor.xpr
 # Log file: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/vivado.log
 # Journal file: C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor\vivado.jou
 #-----------------------------------------------------------
@@ -18,7 +18,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 656.500 ; gain = 68.504
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 684.094 ; gain = 99.102
 update_compile_order -fileset sources_1
 launch_simulation
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
@@ -32,7 +32,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desk
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU_PC_incr
+INFO: [VRFC 10-311] analyzing module ALU_incr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
@@ -69,8 +69,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important do
 INFO: [VRFC 10-311] analyzing module SE
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 705.648 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '10' seconds
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 730.285 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 "xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
@@ -79,15 +79,21 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:99]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:106]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'ALUsel_ID' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:92]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'ALUsel_EX' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:96]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PC
-Compiling module xil_defaultlib.ALU_PC_incr
+Compiling module xil_defaultlib.ALU_incr
 Compiling module xil_defaultlib.MUX_1b(WL=17)
 Compiling module xil_defaultlib.IM
 Compiling module xil_defaultlib.PIP_REG_IFtoID
@@ -117,9 +123,9 @@ Built simulation snapshot tb_PipelineProcessor_behav
 
 source C:/Users/Cliff/Desktop/Important -notrace
 couldn't read file "C:/Users/Cliff/Desktop/Important": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Thu Nov 14 20:51:57 2019...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 705.648 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '14' seconds
+INFO: [Common 17-206] Exiting Webtalk at Fri Nov 15 22:52:03 2019...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 730.285 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
@@ -138,13 +144,12 @@ source tb_PipelineProcessor.tcl
 #   }
 # }
 # run 1000ns
-$finish called at time : 200 ns : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 125
-xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 765.133 ; gain = 49.102
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+xsim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 777.789 ; gain = 28.391
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_PipelineProcessor_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:38 . Memory (MB): peak = 765.133 ; gain = 59.484
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 777.789 ; gain = 47.504
 relaunch_sim
-suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 775.152 ; gain = 0.000
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
@@ -156,7 +161,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desk
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU_PC_incr
+INFO: [VRFC 10-311] analyzing module ALU_incr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
@@ -193,7 +198,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important do
 INFO: [VRFC 10-311] analyzing module SE
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
@@ -203,15 +208,21 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:99]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:106]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'ALUsel_ID' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:92]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'ALUsel_EX' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:96]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PC
-Compiling module xil_defaultlib.ALU_PC_incr
+Compiling module xil_defaultlib.ALU_incr
 Compiling module xil_defaultlib.MUX_1b(WL=17)
 Compiling module xil_defaultlib.IM
 Compiling module xil_defaultlib.PIP_REG_IFtoID
@@ -233,14 +244,12 @@ Compiling module xil_defaultlib.HAZ
 Compiling module xil_defaultlib.tb_PipelineProcessor
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_PipelineProcessor_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-$finish called at time : 200 ns : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 125
-relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:19 . Memory (MB): peak = 775.152 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
@@ -252,7 +261,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desk
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU_PC_incr
+INFO: [VRFC 10-311] analyzing module ALU_incr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
@@ -289,7 +298,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important do
 INFO: [VRFC 10-311] analyzing module SE
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
 "xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
@@ -298,17 +308,19 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:85]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:100]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:107]
-WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PC
-Compiling module xil_defaultlib.ALU_PC_incr
+Compiling module xil_defaultlib.ALU_incr
 Compiling module xil_defaultlib.MUX_1b(WL=17)
 Compiling module xil_defaultlib.IM
 Compiling module xil_defaultlib.PIP_REG_IFtoID
@@ -331,28 +343,1179 @@ Compiling module xil_defaultlib.tb_PipelineProcessor
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_PipelineProcessor_behav
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_PipelineProcessor_behav -key {Behavioral:sim_1:Functional:tb_PipelineProcessor} -tclbatch {tb_PipelineProcessor.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-source tb_PipelineProcessor.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-$finish called at time : 200 ns : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 126
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_PipelineProcessor_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 775.152 ; gain = 0.000
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'opcode' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:80]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 5 for port 'funct' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:84]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1526.156 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_PipelineProcessor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_PipelineProcessor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_incr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AND_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_ALUop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/CTRL_main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CTRL_main
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/DM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/EQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EQ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/HAZ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HAZ
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/IM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/MUX_2b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX_2b
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_EXtoMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_EXtoMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IDtoEX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IDtoEX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_IFtoID.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_IFtoID
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/PIP_REG_MEMtoWB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIP_REG_MEMtoWB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/SE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SE
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_PipelineProcessor
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.sim/sim_1/behav/xsim'
+"xelab -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.ALU_incr
+Compiling module xil_defaultlib.MUX_1b(WL=17)
+Compiling module xil_defaultlib.IM
+Compiling module xil_defaultlib.PIP_REG_IFtoID
+Compiling module xil_defaultlib.CTRL_main
+Compiling module xil_defaultlib.EQ
+Compiling module xil_defaultlib.AND_1b
+Compiling module xil_defaultlib.CTRL_ALU
+Compiling module xil_defaultlib.RF
+Compiling module xil_defaultlib.MUX_1b
+Compiling module xil_defaultlib.SE
+Compiling module xil_defaultlib.ALU_adder
+Compiling module xil_defaultlib.PIP_REG_IDtoEX
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX_2b
+Compiling module xil_defaultlib.PIP_REG_EXtoMEM
+Compiling module xil_defaultlib.DM(dep=8)
+Compiling module xil_defaultlib.PIP_REG_MEMtoWB
+Compiling module xil_defaultlib.HAZ
+Compiling module xil_defaultlib.tb_PipelineProcessor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_PipelineProcessor_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.156 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -367,7 +1530,7 @@ INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Cliff/Desk
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_PC_incr.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ALU_PC_incr
+INFO: [VRFC 10-311] analyzing module ALU_incr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/ALU_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sources_1/new/AND_1b.v" into library xil_defaultlib
@@ -413,17 +1576,17 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto dd7db13f5a004bd3b76f5e2fedb9916a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_PipelineProcessor_behav xil_defaultlib.tb_PipelineProcessor xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:85]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:100]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:107]
-WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:69]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in1' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 17 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:90]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 32 for port 'in0' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:105]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 8 for port 'DMA' [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:112]
+WARNING: [VRFC 10-3283] element index 31 into 'PCplus1_ID' is out of bounds [C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v:74]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PC
-Compiling module xil_defaultlib.ALU_PC_incr
+Compiling module xil_defaultlib.ALU_incr
 Compiling module xil_defaultlib.MUX_1b(WL=17)
 Compiling module xil_defaultlib.IM
 Compiling module xil_defaultlib.PIP_REG_IFtoID
@@ -464,11 +1627,11 @@ source tb_PipelineProcessor.tcl
 #   }
 # }
 # run 1000ns
-$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 126
+$finish called at time : 1 us : File "C:/Users/Cliff/Desktop/Important docs/Schoolwork/SDSU/Computer Engineering/COMPE 475/COMPE475_PipelineProcessor/COMPE475_PipelineProcessor.srcs/sim_1/new/tb_PipelineProcessor.v" Line 131
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_PipelineProcessor_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 775.152 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.156 ; gain = 0.000
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 14 21:34:34 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 15 23:38:12 2019...

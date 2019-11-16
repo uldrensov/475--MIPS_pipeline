@@ -21,13 +21,13 @@
 
 
 //PIPELINE REGISTER: DECODE TO EXECUTE
-module PIP_REG_IDtoEX #(parameter WL=32)
+module PIP_REG_IDtoEX #(parameter wid=32, RFdep=5, mode_wid=3)
 (input CLK, RST, RFWE_ID, DMWE_ID, MtoRFsel_ID, RFDsel_ID, ALUInsel_ID,
-    input[2:0] ALUsel_ID, input[4:0] rs_ID, rt_ID, rd_ID, shamt_ID,
-    input signed[WL-1:0] OPRND1_ID, OPRND2_ID, simm_ID,
+    input[mode_wid-1:0] ALUsel_ID, input[RFdep-1:0] rs_ID, rt_ID, rd_ID, shamt_ID,
+    input signed[wid-1:0] OPRND1_ID, OPRND2_ID, simm_ID,
     output reg RFWE_EX, DMWE_EX, MtoRFsel_EX, RFDsel_EX, ALUInsel_EX,
-    output reg[2:0] ALUsel_EX, output reg[4:0] rs_EX, rt_EX, rd_EX, shamt_EX,
-    output reg signed[WL-1:0] OPRND1_EX, OPRND2_EX, simm_EX);
+    output reg[mode_wid-1:0] ALUsel_EX, output reg[RFdep-1:0] rs_EX, rt_EX, rd_EX, shamt_EX,
+    output reg signed[wid-1:0] OPRND1_EX, OPRND2_EX, simm_EX);
 
     always @(posedge CLK) begin
         if (RST) begin

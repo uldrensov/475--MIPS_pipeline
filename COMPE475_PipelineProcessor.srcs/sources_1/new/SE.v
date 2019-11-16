@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-//16b TO (WL)b SIGN EXTENDER
-module SE #(parameter WL=32)
-(input[15:0] imm, output reg signed[WL-1:0] simm);
+//SIGN EXTENDER
+module SE #(parameter WLin=16, WLout=32)
+(input[WLin-1:0] imm, output reg signed[WLout-1:0] simm);
 
-    reg[WL-17:0] ext = 0;
-    always @(*) simm <= imm[15]? {~ext, imm}:{ext, imm};
+    reg[WLout-WLin-1:0] ext = 0;
+    always @(*) simm <= imm[WLin-1]? {~ext, imm}:{ext, imm};
 endmodule

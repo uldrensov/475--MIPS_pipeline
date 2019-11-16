@@ -21,41 +21,46 @@
 
 
 module tb_PipelineProcessor;
-    parameter addrW=17;
-    parameter WL=32;
+    parameter wid=32; //width of data word
+    parameter dep=17; //depth of memory
+    parameter RFdep= 5; //depth of RF
+    parameter op_wid=2; //width of ALUOp
+    parameter mode_wid=3; //width of ALUsel
+    parameter sh_wid=5; //width of shamt
     
     
     reg CLK = 0;
     
-    wire[addrW-1:0] PCnextT1, PCnextT2, PCcurr, PCplus1_IF;
-    wire[31:0] instr_IF;
+    wire[dep-1:0] PCnextT1, PCnextT2, PCcurr, PCplus1_IF;
+    wire[wid-1:0] instr_IF;
     
-    wire[addrW-1:0] PCplus1_ID;
-    wire[31:0] instr_ID;
+    wire[dep-1:0] PCplus1_ID;
+    wire[wid-1:0] instr_ID;
     wire RFWE_ID, DMWE_ID, MtoRFsel_ID, RFDsel_ID, ALUInsel_ID;
-    wire[2:0] ALUsel_ID;
+    wire[mode_wid-1:0] ALUsel_ID;
     wire BRANCH, equal, BEQ, JUMP;
-    wire[1:0] ALUOp;
-    wire signed[WL-1:0] RFRD1, RFRD2, OPRND1_ID, OPRND2_ID;
-    wire signed[WL-1:0] simm_ID;
-    wire[addrW-1:0] BTA;
+    wire[op_wid-1:0] ALUOp;
+    wire signed[wid-1:0] RFRD1, RFRD2, OPRND1_ID, OPRND2_ID;
+    wire signed[wid-1:0] simm_ID;
+    wire[dep-1:0] BTA;
     
     wire RFWE_EX, DMWE_EX, MtoRFsel_EX, RFDsel_EX, ALUInsel_EX;
-    wire[2:0]ALUsel_EX;
-    wire[4:0] rs_EX, rt_EX, rd_EX, shamt;
-    wire signed[WL-1:0] OPRND1_EX, OPRND2_EX, simm_EX;
-    wire[4:0] RFWA_EX;
-    wire signed[WL-1:0] ALUIn2andDMWD;
-    wire signed[WL-1:0] ALUIn1, ALUIn2, ALUOut_EX;
+    wire[mode_wid-1:0] ALUsel_EX;
+    wire[RFdep-1:0] rs_EX, rt_EX, rd_EX;
+    wire[sh_wid-1:0] shamt;
+    wire signed[wid-1:0] OPRND1_EX, OPRND2_EX, simm_EX;
+    wire[RFdep-1:0] RFWA_EX;
+    wire signed[wid-1:0] ALUIn2andDMWD;
+    wire signed[wid-1:0] ALUIn1, ALUIn2, ALUOut_EX;
     
     wire RFWE_MEM, DMWE_MEM, MtoRFsel_MEM;
-    wire[4:0] RFWA_MEM;
-    wire signed[WL-1:0] ALUOut_MEM, DMWD_MEM;
+    wire[RFdep-1:0] RFWA_MEM;
+    wire signed[wid-1:0] ALUOut_MEM, DMWD_MEM;
     
-    wire signed[WL-1:0] DMRD_MEM;
+    wire signed[wid-1:0] DMRD_MEM;
     wire RFWE_WB, MtoRFsel_WB;
-    wire[4:0] RFWA_WB;
-    wire signed[WL-1:0] ALUOut_WB, DMRD_WB, RFWD;
+    wire[RFdep-1:0] RFWA_WB;
+    wire signed[wid-1:0] ALUOut_WB, DMRD_WB, RFWD;
     
     wire STALL, FLUSH_IDtoEX;
     wire FW1_ID, FW2_ID;
@@ -64,9 +69,9 @@ module tb_PipelineProcessor;
     
     //IF stage
     PC PC(.CLK(CLK), .STALL(STALL), .PCnext(PCnextT2), .PCcurr(PCcurr));
-        ALU_PC_incr ALU_PC_incr(.curr(PCcurr), .next(PCplus1_IF));
-        MUX_1b #(addrW)MUXintoPCnextT1(.in0(PCplus1_IF), .in1(BTA), .sel(BEQ), .out(PCnextT1));
-        MUX_1b #(addrW)MUXintoPCnextT2(.in0(PCnextT1), .in1({PCplus1_ID[31:26],instr_ID[25:0]}), .sel(JUMP), .out(PCnextT2));
+        ALU_incr ALU_incr(.in(PCcurr), .out(PCplus1_IF));
+        MUX_1b #(dep)MUXintoPCnextT1(.in0(PCplus1_IF), .in1(BTA), .sel(BEQ), .out(PCnextT1));
+        MUX_1b #(dep)MUXintoPCnextT2(.in0(PCnextT1), .in1({PCplus1_ID[31:26],instr_ID[25:0]}), .sel(JUMP), .out(PCnextT2));
     IM IM(.IMRA(PCcurr), .IMRD(instr_IF));
     PIP_REG_IFtoID PIP_REG_IFtoID(.CLK(CLK), .STALL(STALL), .RST(BEQ), .PCplus1_IF(PCplus1_IF), .instr_IF(instr_IF),
             .PCplus1_ID(PCplus1_ID), .instr_ID(instr_ID));
@@ -104,7 +109,7 @@ module tb_PipelineProcessor;
             .RFWA_MEM(RFWA_MEM), .ALUOut_MEM(ALUOut_MEM), .DMWD_MEM(DMWD_MEM));
     
     //MEM stage
-    DM #(32,8)DM(.CLK(CLK), .DMWE(DMWE_MEM), .DMA(ALUOut_MEM), .DMWD(DMWD_MEM), .DMRD(DMRD_MEM));
+    DM #(wid,8)DM(.CLK(CLK), .DMWE(DMWE_MEM), .DMA(ALUOut_MEM), .DMWD(DMWD_MEM), .DMRD(DMRD_MEM));
     PIP_REG_MEMtoWB PIP_REG_MEMtoWB(.CLK(CLK), .RFWE_MEM(RFWE_MEM), .MtoRFsel_MEM(MtoRFsel_MEM),
             .RFWA_MEM(RFWA_MEM), .ALUOut_MEM(ALUOut_MEM), .DMRD_MEM(DMRD_MEM),
             .RFWE_WB(RFWE_WB), .MtoRFsel_WB(MtoRFsel_WB),
@@ -125,9 +130,3 @@ module tb_PipelineProcessor;
     always #5 CLK = ~CLK;
     initial #1000 $finish;
 endmodule
-
-//TODO:
-//parametric everything
-//sequential will not infer latch
-//smth wrong with ctrl alu filename
-//fix rtypes in singlecycle
